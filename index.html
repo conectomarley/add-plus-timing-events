@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge 3 - JS Timing Events</title>
+    <style>
+      body {
+        background-color: #a4c6cc;
+        font-family: "roboto", sans-serif;
+      }
+
+      h1 {
+        font-family: "roboto", sans-serif;
+        font-size: 20px;
+      }
+
+      .timing-events {
+        background: white;
+        max-width: 600px;
+        margin: 45px auto;
+        box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+        border-radius: 16px;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="timing-events">
+      <h1>Challenge - Timing Events</h1>
+      <div id="date"></div>
+      <div id="milliseconds"></div>
+      <script>
+        function displayDate() {
+          let dateElement = document.querySelector("#date");
+          dateElement.innerHTML = `Challenge 1: ${new Date()}`;
+        }
+
+        displayDate();
+        setInterval(displayDate, 5000);
+
+        function displayMilliseconds() {
+          let millisecondsElement = document.querySelector("#milliseconds");
+          let currentMilliseconds = Date.now();
+          let lastThreeDigits = currentMilliseconds.toString().slice(-3);
+          millisecondsElement.innerHTML = `Challenge 2: ${lastThreeDigits}`;
+        }
+
+        setInterval(displayMilliseconds, 1);
+      </script>
+    </div>
+  </body>
+</html>
